@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+$primary: #424F66;
+$accent-1: #C3A279;
+$accent-2: #F8FBFE;
+$dark: #232B37;
+$light-grey: #BFC5CF;
+
+//сброс стилей
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited  {
+    text-decoration: none;
+}
+
+a:hover  {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+	font-weight: inherit;
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img, svg {
+	max-width: 100%;
+	height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+	font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+input[type='file'] {
+	max-width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+  color: $primary !important;
+}
+
+div, p {
+  color: $dark !important;
+}
+
+//scss
+
+@mixin monteserrat_font($weight, $size, $height) {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin nunito_font($weight, $size, $height) {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+  font-size: $size;
+  line-height: $height;
+}
+
+.displaylarge {
+  @include monteserrat_font(900, 54px, 70px);
+}
+
+.displaymedium {
+  @include monteserrat_font(900, 30px, 34px);
+}
+
+.title {
+  @include nunito_font(900, 24px, 28px);
+}
+
+.sub_title, a {
+  @include nunito_font(700, 20px, 24px);
+}
+
+.price_product{
+  color: $accent-1 !important;
+  @include nunito_font(700, 20px, 24px);
+}
+
+body {
+  @include nunito_font(500, 16px, 20px);
+}
+
+.discription {
+  @include nunito_font(500, 16px, 20px);
+  font-style: italic
+}
+
+button {
+  @include nunito_font(900, 16px, 20px);
+}
+
+//css
+
+body {
+  background-color: $accent-2 !important;
+}
+
+.mobile-vers {
+  display: none;
+}
+
+.comp-vers {
+  display: block;
+}
+
+.button-primary {
+  background-color: $accent-1;
+  color: $accent-2;
+  padding: 7px 30px;
+  border-radius: 20px !important;
+  text-transform: uppercase !important;
+}
+
+.button-primary:hover, .button-primary:focus {
+  background-color: #d4a871;
+  padding: 8px 31px;
+  transition: color .5s;
+}
+
+.button-primary:active {
+  background-color: #f1a13f;  
+  padding: 8px 31px;
+  transition: color .5s;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+#text-personalised {
+  background-color: $accent-1;
+  color: $accent-2;
+  padding: 10px;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-0 {
+  z-index: 0;
+}
+
+.img-size-8 {
+  width: 8vw;
+}
+
+.img-size-1 {
+  width: 1vw;
+}
+
+nav {
+  background-color: $primary;
+  color: $accent-2;
+  gap: 13rem;
+}
+
+.container-fluid, .navbar-collapse, .navbar-nav{
+  display: flex;
+  flex-direction: column !important;
+}
+
+.container-fluid {
+  align-items: start !important;
+}
+
+#header-img {
+  height: 100%;
+}
+
+.text-color-grey {
+  color: $light-grey !important;
+}
+
+.text-color-light {
+  color: $accent-2 !important;
+}
+
+li {
+  margin-top: 1rem;
+}
+
+// section 2
+
+#section-coffee-class {
+  margin: 10vh 10vw;
+}
+
+.coffee-class-flex {
+  display: flex;
+}
+
+// section 3
+
+#section-coffee-grid {
+  margin: 10vh 0 0;
+  height: 100%;  
+  overflow: hidden;
+}
+
+#bg-primary-section-1 {
+  z-index: -1;
+  background-color: $primary;
+  width: 25vw;
+  height: 90%;
+  position: absolute;
+  left: 0;
+}
+
+#bg-light-section-1 {
+  z-index: -1;
+  background-color: $accent-2;
+  width: 75vw;
+  height: 90%;
+  position: absolute;
+  right: 0;
+}
+
+.mt-10vh {
+  margin-top: 10vh;
+}
+
+.card-coffee {
+  display: flex;
+  background-color: white;
+  box-shadow: 0px 0px 10px 10px rgba(176, 185, 190, 0.3);
+  padding: 0 !important;
+  margin: 0;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.background-card-img {
+  background-color: #ECEFF4;
+}
+
+.card-img-center {
+  padding: auto 0;
+}
+
+.button-secondary {
+  padding: 7px 30px;
+  @include nunito_font(900, 16px, 20px);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button-secondary:hover, .button-secondary:active {
+  color: $primary;
+}
+
+.container-coffee-grid {
+  margin: 10vh 13vw 0;
+  width: 115vw !important;
+}
+
+// section 4
+
+#section-gift {
+  padding: 0;
+  height: 100%;  
+}
+
+#bg-grey-section-2 {
+  z-index: -1;
+  background-color: $light-grey;
+  width: 75vw;
+  height: 90%;
+  position: absolute;
+  left: 0;
+}
+
+#bg-light-section-2 {
+  z-index: -1;
+  background-color: $accent-2;
+  width: 25vw;
+  height: 90%;
+  position: absolute;
+  right: 0;
+}
+
+#card-gift {
+  background-color: white;
+  width: 75vw;
+  margin: 10vh 0 5vh;
+}
+
+#img-gift {
+  position: relative;
+  top: 30px;
+  right: 10vw;
+}
+
+// section 5
+
+#section-coffee-personalised {
+  padding: 10vh 0 0; 
+  height: auto;
+  overflow: hidden;
+}
+
+#bg-light-section-3 {
+  z-index: -1;
+  background-color: $accent-2;
+  width: 75vw;
+  height: 80vh;
+  position: absolute;
+  left: 0;
+}
+
+#bg-dark-section-3 {
+  z-index: -1;
+  background-color: $dark;
+  width: 25vw;
+  height: 80vh;
+  position: absolute;
+  right: 0;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100vw;
+  margin: 10vh 10vw 0;
+  gap: 2rem;
+}
+
+.container-grid img {
+  width: 100%;
+}
+
+.card-coffee-pers {
+  background-color: white;
+  box-shadow: 0px 0px 10px 10px rgba(176, 185, 190, 0.3);
+  padding: 0 !important;
+  margin: 0;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+
+// footer
+
+#footer {
+  background-color: $light-grey;
+  color: $primary;
+  padding: 1vw;
+}
+
+
+// breakpoint 1024px
+
+@media (max-width: 1024px) {
+.displaylarge {
+  font-size: 48px;
+  line-height: 4rem;
+}
+
+.displaymedium {
+  font-size: 20px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+button {
+  padding: 5px 25px;
+  font-size: 12px !important;
+}
+
+.price_product, a{
+  font-size: 16px !important;
+}
+
+button:hover, button:focus, button:active {
+  padding: 6px 26px;
+}
+
+nav {
+  gap: 6rem;
+}
+
+.img-size-1 {
+  width: 2vw;
+}
+
+// section 2
+
+#section-coffee-class {
+  margin: 10vh 5vw;
+}
+
+// section 3
+
+.mt-10vh {
+  margin-top: 8vh;
+}
+
+.button-secondary {
+  padding: 5px 25px;
+  font-size: 12px;
+}
+
+// section 4
+
+#img-gift {
+  top: 100px;
+  right: 8vw;
+  width: 30vw;
+  height: 300px;
+}
+
+// section 5
+
+#section-coffee-personalised {
+  padding: 0; 
+}
+
+#bg-light-section-3, #bg-dark-section-3 {
+  height: 90vh;
+}
+}
+
+
+// breakpoint 768px
+
+@media (max-width: 768px) {
+.mobile-vers {
+  display: block;
+}
+
+.comp-vers {
+  display: none;
+}
+
+#header {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#text-personalised {
+  padding: 5px;
+}
+
+.displaymedium, .title {
+  font-size: 18px;
+}
+
+.price_product{
+  font-size: 14px;
+}
+
+#shop-img {
+  display: none;
+}
+
+#header-logo {
+  display: none;
+}
+
+#header-img {
+  height: 50vh;
+  object-fit: cover;
+}
+
+.img-size-1 {
+  width: 2vw;
+}
+
+// section 2
+
+#section-coffee-class {
+  margin: 10vh 5vw;
+}
+
+.coffee-class-flex {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10vw;
+}
+
+// section 4
+
+#img-gift {
+  top: 100px;
+  right: 8vw;
+  width: 35vw;
+  height: 250px;
+}
+
+// section 5
+
+#bg-light-section-3, #bg-dark-section-3 {
+  height: 190vh;
+}
+
+
+#section-coffee-personalised {
+  padding: 0;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100vw;
+  margin: 10vw 0 0;
+  gap: 2rem;
+  padding: 0 10vw;
+}
+
+.card-coffee-pers {
+  display: flex;
+}
+
+#bg-primary-section-1,#bg-light-section-1, #bg-grey-section-2, #bg-light-section-2, #bg-light-section-3, #bg-dark-section-3,
+#second-row {
+  display: none;
+}
+}
+
+
+// breakpoint 375px
+
+@media (max-width: 376px) {
+#text-personalised {
+  padding: 3px;
+}
+
+.displaylarge {
+  font-size: 20px;
+  line-height: 4rem;
+}
+
+.displaymedium, .title {
+  font-size: 12px;
+}
+
+.price_product{
+  font-size: 8px;
+}
+
+#card-gift {
+  flex-direction: column;
+  padding: 20px;
+}
+
+#img-gift {
+  right: 0;
+  top: 0;
+  width: 70vw;
+}
+
+.card-coffee-pers {
+  flex-direction: column;
+}
+}
